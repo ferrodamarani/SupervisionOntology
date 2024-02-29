@@ -1,0 +1,1711 @@
+@prefix : <http://www.semanticweb.org/ontologies/2014/1/cps_supervision#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pca: <http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix iso-15926: <http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003#> .
+@base <http://www.semanticweb.org/ontologies/2014/1/cps_supervision> .
+
+<http://www.semanticweb.org/ontologies/2014/1/cps_supervision> rdf:type owl:Ontology ;
+                                                               
+                                                               owl:imports <http://rds.posccaesar.org/2008/02/OWL/ISO-15926-2_2003> .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#synonymous
+
+:synonymous rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasActionAssignedTo
+
+pca:hasActionAssignedTo rdf:type owl:ObjectProperty ;
+                        
+                        rdfs:label "hasActionAssignedTo"@es .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasActionRequired
+
+pca:hasActionRequired rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:label "hasActionRequired"@es .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasAlarmStatus
+
+pca:hasAlarmStatus rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasConsequence
+
+pca:hasConsequence rdf:type owl:ObjectProperty ;
+                   
+                   owl:inverseOf pca:isConsequenceOf ;
+                   
+                   rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasCurrentAlarmStatus
+
+pca:hasCurrentAlarmStatus rdf:type owl:ObjectProperty ;
+                          
+                          rdfs:label "hasCurrentAlarmStatus"@es ;
+                          
+                          rdfs:subPropertyOf pca:hasAlarmStatus .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasHazard
+
+pca:hasHazard rdf:type owl:ObjectProperty ;
+              
+              rdfs:label "hasHazard"@es .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasNotHazard
+
+pca:hasNotHazard rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "hasNotHazard"@es .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasPosibleCause
+
+pca:hasPosibleCause rdf:type owl:ObjectProperty ;
+                    
+                    owl:inverseOf pca:isPosibleCauseOf ;
+                    
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasPossibleHazard
+
+pca:hasPossibleHazard rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:label "hasPossibleHazard"@es .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasPreviousAlarmStatus
+
+pca:hasPreviousAlarmStatus rdf:type owl:ObjectProperty ;
+                           
+                           rdfs:label "hasPreviousAlarmStatus"@es ;
+                           
+                           rdfs:subPropertyOf pca:hasAlarmStatus .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasRisk
+
+pca:hasRisk rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "hasRisk"@es .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasSafeguard
+
+pca:hasSafeguard rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasSignature
+
+pca:hasSignature rdf:type owl:ObjectProperty ;
+                 
+                 owl:inverseOf pca:hasPossibleHazard .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#isConsequenceOf
+
+pca:isConsequenceOf rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#isHazardOf
+
+pca:isHazardOf rdf:type owl:ObjectProperty ;
+               
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#isPosibleCauseOf
+
+pca:isPosibleCauseOf rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#affectFunction
+
+:affectFunction rdf:type owl:ObjectProperty ;
+                
+                rdfs:range :Function .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#applyIn
+
+:applyIn rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#causesDepatureFrom
+
+:causesDepatureFrom rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#deviate
+
+:deviate rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#hasAssociatedFeature
+
+:hasAssociatedFeature rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#hasAssociatedHazard
+
+:hasAssociatedHazard rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#hasHarm
+
+:hasHarm rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#hasSubTask
+
+:hasSubTask rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#hasSymptom
+
+:hasSymptom rdf:type owl:ObjectProperty ;
+            
+            owl:inverseOf :isSymptomOf .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#initiate
+
+:initiate rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#isCausedBy
+
+:isCausedBy rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#isFailureOf
+
+:isFailureOf rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#isFaultOf
+
+:isFaultOf rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#isSymptomOf
+
+:isSymptomOf rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#mustDo
+
+:mustDo rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#resultFrom
+
+:resultFrom rdf:type owl:ObjectProperty ;
+            
+            rdfs:range :Fault ;
+            
+            rdfs:domain :FaultEvent ;
+            
+            owl:inverseOf :initiate .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#hasDescription
+
+pca:hasDescription rdf:type owl:DatatypeProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#AcknowledgeHazard
+
+pca:AcknowledgeHazard rdf:type owl:Class ;
+                      
+                      owl:equivalentClass [ rdf:type owl:Class ;
+                                            owl:intersectionOf ( pca:HazardActiveNow
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty pca:hasPreviousAlarmStatus ;
+                                                                   owl:hasValue pca:Acknowledged
+                                                                 ]
+                                                               )
+                                          ] ;
+                      
+                      rdfs:subClassOf pca:HazardActiveNow ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty pca:hasCurrentAlarmStatus ;
+                                        owl:hasValue pca:Acknowledged
+                                      ] .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#ActionRequired
+
+pca:ActionRequired rdf:type owl:Class ;
+                   
+                   rdfs:label "ActionRequired"@es ;
+                   
+                   rdfs:subClassOf pca:BehavioralElement ;
+                   
+                   rdfs:comment """Identify any hazard mitigation or control actions required 
+"""@en ;
+                   
+                   rdfs:isDefinedBy "[HAZOP Tutorial]"@en .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#ActiveHazard
+
+pca:ActiveHazard rdf:type owl:Class ;
+                 
+                 rdfs:label "ActiveHazard"@es ;
+                 
+                 rdfs:subClassOf pca:Hazard ;
+                 
+                 owl:disjointWith pca:InactiveHazard .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#AlarmStatus
+
+pca:AlarmStatus rdf:type owl:Class ;
+                
+                rdfs:subClassOf [ rdf:type owl:Class ;
+                                  owl:intersectionOf ( pca:BehavioralElement
+                                                       [ rdf:type owl:Class ;
+                                                         owl:oneOf ( pca:Acknowledged
+                                                                     pca:Active
+                                                                     pca:Inactive
+                                                                   )
+                                                       ]
+                                                     )
+                                ] .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#BehavioralElement
+
+pca:BehavioralElement rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf owl:Thing .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#Consequence
+
+pca:Consequence rdf:type owl:Class ;
+                
+                rdfs:subClassOf pca:BehavioralElement ,
+                                [ rdf:type owl:Class ;
+                                  owl:intersectionOf ( pca:BehavioralElement
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty pca:hasDescription ;
+                                                         owl:someValuesFrom xsd:string
+                                                       ]
+                                                     )
+                                ] .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#CorrectiveAction
+
+pca:CorrectiveAction rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( pca:BehavioralElement
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty pca:hasDescription ;
+                                                              owl:someValuesFrom xsd:string
+                                                            ]
+                                                          )
+                                     ] .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#EnterpriseActor
+
+pca:EnterpriseActor rdf:type owl:Class ;
+                    
+                    rdfs:label "EnterpriseActor"@es ;
+                    
+                    rdfs:subClassOf owl:Thing .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#Hazard
+
+pca:Hazard rdf:type owl:Class ;
+           
+           rdfs:subClassOf owl:Thing ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasHarm ;
+                             owl:allValuesFrom :Harm
+                           ] ;
+           
+           rdfs:comment "HAZARD affect SAFETY and RELIABILITY" ,
+                        " Potential source of harm. Deviations from design or operational intent may constitute or produce a hazard. Hazards are the focus of HAZOP studies, and it should be noted that a single hazard could potentially lead to multiple forms of harm." ;
+           
+           owl:disjointUnionOf ( pca:ActiveHazard
+                                 pca:InactiveHazard
+                               ) .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#HazardActiveNow
+
+pca:HazardActiveNow rdf:type owl:Class ;
+                    
+                    rdfs:label "HazardActiveNow"@es ;
+                    
+                    rdfs:subClassOf pca:ActiveHazard .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#HazardActivedPreviously
+
+pca:HazardActivedPreviously rdf:type owl:Class ;
+                            
+                            rdfs:label "HazardActivedPreviously"@es ;
+                            
+                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                  owl:onProperty pca:hasPreviousAlarmStatus ;
+                                                  owl:hasValue pca:Active
+                                                ] ;
+                            
+                            rdfs:subClassOf pca:ActiveHazard ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty pca:hasCurrentAlarmStatus ;
+                                              owl:hasValue pca:Active
+                                            ] .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#InactiveHazard
+
+pca:InactiveHazard rdf:type owl:Class ;
+                   
+                   rdfs:label "InactiveHazard"@es ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Class ;
+                                         owl:intersectionOf ( pca:Hazard
+                                                              [ rdf:type owl:Class ;
+                                                                owl:complementOf pca:ActiveHazard
+                                                              ]
+                                                            )
+                                       ] ;
+                   
+                   rdfs:subClassOf pca:Hazard ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty pca:hasCurrentAlarmStatus ;
+                                     owl:hasValue pca:Inactive
+                                   ] .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#PosibleCause
+
+pca:PosibleCause rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf [ rdf:type owl:Class ;
+                                   owl:intersectionOf ( pca:BehavioralElement
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty pca:hasDescription ;
+                                                          owl:someValuesFrom xsd:string
+                                                        ]
+                                                      )
+                                 ] ;
+                 
+                 rdfs:comment """Describe how the Hazard (Deviation) may occur. 
+
+"""@en ;
+                 
+                 rdfs:isDefinedBy "[Hazop Tutorial]"@en .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#Risk
+
+pca:Risk rdf:type owl:Class ;
+         
+         rdfs:subClassOf pca:BehavioralElement ;
+         
+         rdfs:comment "Combination of probability of occurrence of harm and the severity of that harm. In a strict sense, “risk” is not always explicitly identified in HAZOP studies since the core methodology does not require identification (also referred to as rating) of the probability or severity of harm. However, risk assessment teams may choose to rate these factors in order to further quantify and prioritize risks if needed."@es .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#Safeguard
+
+pca:Safeguard rdf:type owl:Class ;
+              
+              rdfs:subClassOf [ rdf:type owl:Class ;
+                                owl:intersectionOf ( pca:BehavioralElement
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty pca:hasDescription ;
+                                                       owl:someValuesFrom xsd:string
+                                                     ]
+                                                   )
+                              ] ;
+              
+              rdfs:comment "The Safe Guard are a list of controls (preventive or reactive) that reduce deviation likelihood or severity"@en .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#UnacknowledgedHazard
+
+pca:UnacknowledgedHazard rdf:type owl:Class ;
+                         
+                         owl:equivalentClass [ rdf:type owl:Class ;
+                                               owl:intersectionOf ( pca:HazardActiveNow
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty pca:hasPreviousAlarmStatus ;
+                                                                      owl:hasValue pca:Inactive
+                                                                    ]
+                                                                  )
+                                             ] ;
+                         
+                         rdfs:subClassOf pca:HazardActiveNow ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty pca:hasCurrentAlarmStatus ;
+                                           owl:hasValue pca:Active
+                                         ] .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#AbnormalSituation
+
+:AbnormalSituation rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :PlantIntemCondition ;
+                   
+                   owl:disjointWith :NormalCondition .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#AbruptFault
+
+:AbruptFault rdf:type owl:Class ;
+             
+             rdfs:subClassOf :FaultByTimeBehavior ;
+             
+             rdfs:comment """abrupt fault (stepwise);
+""" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#ActuatorFault
+
+:ActuatorFault rdf:type owl:Class ;
+               
+               rdfs:subClassOf :FaultByComponent ;
+               
+               owl:disjointWith :SensorFault ;
+               
+               rdfs:comment "The plant properties are not affected, but the inﬂuence of the controller on the plant is interrupted or modiﬁed" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#AdditiveFault
+
+:AdditiveFault rdf:type owl:Class ;
+               
+               rdfs:subClassOf :FaultByEfect ;
+               
+               owl:disjointWith :MultiplicativeFault .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#AnalyticSymptom
+
+:AnalyticSymptom rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Symptom ;
+                 
+                 owl:disjointWith :HeuristicSymptom ;
+                 
+                 rdfs:comment "A symptom obtained processing measured variables and analytic parameters. The analytical symptoms are the results of the limit checking of measurable signals, signal or process-model fault-detection methods and of change-detection methods." .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#AssemblingFault
+
+:AssemblingFault rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :FaultByOperation .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#AutomaticProtection
+
+:AutomaticProtection rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :Protection ;
+                     
+                     owl:disjointWith :ManualProtection ;
+                     
+                     rdfs:comment "Automatic Protection is when the monitoring function automatically initiates an appropriate counteraction. Usually, the process is then commanded to a fail-safe state, which is frequently an emergency shutdown. It is recommended in the case of a dangerous fault condition." .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Availability
+
+:Availability rdf:type owl:Class ;
+              
+              rdfs:subClassOf :SystemProperty ;
+              
+              rdfs:comment """Probability that a system or equipment will operate satisfactorily and effectively at any point of time.
+Remarks:
+•availability is of major importance for the user of a system;
+•availability takes into account that failures and malfunctions happen and need some time for repair
+•a measure for availability is A =   where MTTF is the Mean Time To Repair.
+• To reach a high availability MTTF must be large in comparison to MTTR. This can be reached by 
+ large operation time MTTF
+      o perfection: high reliable components;
+      o tolerance: tolerable faults through redundant structure
+  small repair time MTTR
+      o fast and reliable fault diagnosis;
+      o fast and reliable remove of faults (maintenance repair);
+""" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Block
+
+:Block rdf:type owl:Class ;
+       
+       rdfs:subClassOf :Fault .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#CalulatedFeature
+
+:CalulatedFeature rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Feature ;
+                  
+                  owl:disjointWith :ObservedFeature ;
+                  
+                  :synonymous "AnalyticFeature " .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#CauseOfAbnormalSituation
+
+:CauseOfAbnormalSituation rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasAssociatedHazard ;
+                                            owl:allValuesFrom pca:Hazard
+                                          ] .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#ChangeDetection
+
+:ChangeDetection rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :SupervisionTask ;
+                 
+                 rdfs:comment "The task of finding significant differences between actual and normal behavior of features " .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Decision
+
+:Decision rdf:type owl:Class ;
+          
+          rdfs:subClassOf :SupervisionTask ;
+          
+          rdfs:comment """To choose a proper protecting actions as regards the hazard class and possible degree of danger.
+This may be done either automatically or by the operator.
+""" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Dependability
+
+:Dependability rdf:type owl:Class ;
+               
+               rdfs:subClassOf :SystemProperty ;
+               
+               rdfs:comment "A dependable system is a fail-safe system with high availability and reliability."@en .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#DesignFault
+
+:DesignFault rdf:type owl:Class ;
+             
+             rdfs:subClassOf :Fault .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#DeterministicFailure
+
+:DeterministicFailure rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :Failure ;
+                      
+                      owl:disjointWith :RandomFailure ;
+                      
+                      rdfs:comment "predictable for certain conditions" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Deviation
+
+:Deviation rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Symptom .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Disturbance
+
+:Disturbance rdf:type owl:Class ;
+             
+             rdfs:subClassOf :CauseOfAbnormalSituation ;
+             
+             rdfs:comment "An unknown (and uncontrolled) input acting on a system; (EXTERNO)"@en ,
+                          """Disturbances are usually represented by unknown input signals that have to be added up to the system output. Eg.: Humidity, Temperature, radiation
+
+NOTE: Fault vs Disturbance vs model uncertanties
+The faults are those elements which should be detected and whose effects should be removed by remedial actions. Disturbances and model uncertainties are nuisances, which are known to exist but whose effects on the system performance are handled by appropriate measures like ﬁltering or robust design. Control theory has shown that controllers can be designed so as to attenuate disturbances and tolerate model uncertainties up to a certain size.
+
+"""@en ;
+             
+             owl:incompatibleWith """* Son producto de un factor externo
+* Sus efectos no pueden ser evitados por eminedas/reparaciones (como en el caso de una falla),
+* Sus efectos se pueden atenaur por filtrado o un diseño robusto  """@es ;
+             
+             owl:disjointUnionOf ( :ExternalDisturbance
+                                   :InternalDisturbance
+                                 ) .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#DisturbanceCondition
+
+:DisturbanceCondition rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :AbnormalSituation .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Drift
+
+:Drift rdf:type owl:Class ;
+       
+       rdfs:subClassOf :IncipientFault .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Error
+
+:Error rdf:type owl:Class ;
+       
+       rdfs:comment """A deviation between  a measured  or computed value  (of  an  output  variable)  and  the  true, 
+specified or theoretically correct value. """@en ,
+                    "(Opinion) Se refiere al error como la dif. entre el valor medido y el setpoint"@es .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Event
+
+:Event rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#ExternalDisturbance
+
+:ExternalDisturbance rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :Disturbance ;
+                     
+                     owl:disjointWith :InternalDisturbance .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Failure
+
+:Failure rdf:type owl:Class ;
+         
+         rdfs:subClassOf :FaultEvent ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :affectFunction ;
+                           owl:someValuesFrom :Function
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :isFailureOf ;
+                           owl:allValuesFrom :System
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :affectFunction ;
+                           owl:allValuesFrom :Function
+                         ] ;
+         
+         owl:disjointWith :Malfunction ;
+         
+         rdfs:comment """“A failure is a permanent interruption of a system’s ability to perform a required function under speciﬁed OPERATING CONDITIONS.”
+
+Remarks:
+•	a failure is the termination of the ability of a functional unit to perform a required FUNCTION, [2.13];
+•	a failure is an EVENT;
+•	a failure results from one or more FAULTS;
+•	different types of failures can be distinguished:
+—	number of failures: SINGLE FAILURE, MULTIPLE FAILURE;
+—	predictability:
+-	          RANDOM FAILURE (unpredictable, as, e.g. statistically independent from operation time or other failures);
+-	          DETERMINISTIC FAILURE (predictable for certain conditions);
+-	          SYSTEMATIC FAILURE or CAUSAL FAILURE (dependent on known conditions);
+•	usually a failure arises after begin of operation or by increasingly stressing the system.
+""" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Fault
+
+:Fault rdf:type owl:Class ;
+       
+       rdfs:subClassOf :CauseOfAbnormalSituation ,
+                       [ rdf:type owl:Class ;
+                         owl:intersectionOf ( owl:Thing
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :deviate ;
+                                                owl:someValuesFrom :Feature
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasSymptom ;
+                                                owl:allValuesFrom :Symptom
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :initiate ;
+                                                owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                    owl:unionOf ( :Failure
+                                                                                  :Malfunction
+                                                                                )
+                                                                  ]
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :mustDo ;
+                                                owl:allValuesFrom :FaultManagementAction
+                                              ]
+                                            )
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :isFaultOf ;
+                         owl:allValuesFrom :System
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :isFaultOf ;
+                         owl:someValuesFrom :System
+                       ] ;
+       
+       rdfs:comment """“A fault is an unpermitted deviation of at least one characteristic property (FEATURE) of the system from the acceptable, usual, standard condition.”
+A fault causes a change in the characteristics of a component such that the mode of operation or performance of the component is changed
+in an undesired way. Hence the required speciﬁcations on the system performance are no longer met. However, a fault can be “worked around” by fault-tolerant control so that the faulty system remains operational.
+In contrast to this, the notion of a failure describes the inability of a system or a component to accomplish its function. The system or a component has to be shutoff, because the failure is an irrecoverable event.
+
+Remarks:
+•	a fault is a STATE within the system;
+•	the unpermitted deviation is the difference between the fault value and the violated threshold of a tolerance zone for its usual value;
+•	a fault is an abnormal condition that may cause a reduction in, or loss of, the CAPABILITY of a functional unit to perform a required function [2.13];
+•	there exist many different types of faults, e.g. DESIGN FAULT, MANUFACTURING FAULT, ASSEMBLING FAULT, NORMAL OPERATION FAULT (e.g. wear), WRONG OPERATION FAULT (e.g. overload), MAINTENANCE-FAULT, HARDWARE-FAULT, SOFTWARE-FAULT, OPERATOR’S FAULT. (Some of these faults are also called ERRORS, especially if directly caused by humans);
+•	a fault in the system is independent of whether the system is in operation or not;
+•	a fault may not effect the correct functioning of a system (like a small rent in anaxle);
+•	a fault may initiate a FAILURE or a MALFUNCTION;
+""" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FaultByComponent
+
+:FaultByComponent rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Fault .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FaultByEfect
+
+:FaultByEfect rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Fault ;
+              
+              owl:disjointUnionOf ( :AdditiveFault
+                                    :MultiplicativeFault
+                                  ) .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FaultByForm
+
+:FaultByForm rdf:type owl:Class ;
+             
+             rdfs:subClassOf :Fault .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FaultByOperation
+
+:FaultByOperation rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Fault .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FaultByTimeBehavior
+
+:FaultByTimeBehavior rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :Fault .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FaultDetection
+
+:FaultDetection rdf:type owl:Class ;
+                
+                rdfs:subClassOf [ rdf:type owl:Class ;
+                                  owl:intersectionOf ( :SupervisionTask
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasSubTask ;
+                                                         owl:someValuesFrom :ChangeDetection
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasSubTask ;
+                                                         owl:someValuesFrom :FeatureGeneration
+                                                       ]
+                                                     )
+                                ] ;
+                
+                rdfs:comment "Fault detection is the generation of symptoms by the extraction of special features and  the discovery of change from normal behavior." .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FaultDiagnosis
+
+:FaultDiagnosis rdf:type owl:Class ;
+                
+                rdfs:subClassOf [ rdf:type owl:Class ;
+                                  owl:intersectionOf ( :SupervisionTask
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasSubTask ;
+                                                         owl:someValuesFrom :FaultIdentification
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasSubTask ;
+                                                         owl:someValuesFrom :FaultIsolation
+                                                       ]
+                                                     )
+                                ] ;
+                
+                rdfs:comment "Determination of kind, size, location and time of detection of a FAULT by evaluating SYMPTOMS. Follows fault detection. Includes FAULT ISOLATION and IDENTIﬁCATION;" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FaultEvaluation
+
+:FaultEvaluation rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :SupervisionTask ;
+                 
+                 rdfs:comment "FAULT EVALUATION classifies the faults into different HAZARD classes" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FaultEvent
+
+:FaultEvent rdf:type owl:Class ;
+            
+            rdfs:subClassOf [ rdf:type owl:Class ;
+                              owl:intersectionOf ( :Event
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :resultFrom ;
+                                                     owl:someValuesFrom :Fault
+                                                   ]
+                                                 )
+                            ] .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FaultIdentification
+
+:FaultIdentification rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :SupervisionTask ;
+                     
+                     rdfs:comment """Determination of the size and time-variant behavior of a fault.
+Is the determination of the magnitude of the fault. 
+Follows FAULT ISOLATION.""" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FaultIsolation
+
+:FaultIsolation rdf:type owl:Class ;
+                
+                rdfs:subClassOf :SupervisionTask ;
+                
+                rdfs:comment "Determination of kind, location and time of detection of a fault by evaluating SYMPTOMS. Follows FAULT DETECTION;" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FaultManagementAction
+
+:FaultManagementAction rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :Protection ;
+                       
+                       rdfs:comment "These are the actions that can be taken depending on the HAZARD classes of the diagnosed fault(s) "^^rdfs:Literal .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FaultyCondition
+
+:FaultyCondition rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty :isCausedBy ;
+                                       owl:someValuesFrom :Fault
+                                     ] ;
+                 
+                 rdfs:subClassOf :AbnormalSituation .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Feature
+
+:Feature rdf:type owl:Class ;
+         
+         rdfs:subClassOf :PlantItemQuality ;
+         
+         rdfs:comment "features are extracted value/s from signal or process models, describing the status of the process, (e.g. parameters, state variables, parity equation errors or residuals) " .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#FeatureGeneration
+
+:FeatureGeneration rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :SupervisionTask ;
+                   
+                   rdfs:comment "A task for feature generation by, e.g. special signal processing, state estimation, identiﬁcation and parameter estimation or parity relations;" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Function
+
+:Function rdf:type owl:Class ;
+          
+          rdfs:comment "Función Para asociar al Failure"@es .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#HardwareFault
+
+:HardwareFault rdf:type owl:Class ;
+               
+               rdfs:subClassOf :FaultByComponent .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Harm
+
+:Harm rdf:type owl:Class ;
+      
+      rdfs:comment "Physical injury or damage to the health of people or damage to property or the environment.  Harm is the consequence of a hazard occurring and may take many forms: patient or user safety, employee safety, business risks, regulatory risks, environmental risks, etc. " .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#HeuristicSymptom
+
+:HeuristicSymptom rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Symptom ;
+                  
+                  rdfs:comment "Heuristic symptoms sh; are the observations of the operating personnel in the form of acoustic noise, oscillations or optical impressions like colors or smoke, obtained by inspection. These empirical facts can usually only be represented in form of qualitative measures, e.g. as linguistic expressions like “little”, “medium” or “much”." .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#IncipientFault
+
+:IncipientFault rdf:type owl:Class ;
+                
+                rdfs:subClassOf :FaultByTimeBehavior ;
+                
+                rdfs:comment " incipient fault (drift-like);" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#InspectionAction
+
+:InspectionAction rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :FaultManagementAction ;
+                  
+                  rdfs:comment "Is an inspection to perform a detailed diagnosis by additional measures" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#IntermittentFault
+
+:IntermittentFault rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :FaultByTimeBehavior ;
+                   
+                   rdfs:comment "intermittent fault (with interrupts)" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#InternalDisturbance
+
+:InternalDisturbance rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :Disturbance .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Leak
+
+:Leak rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Fault ;
+      
+      :synonymous "perdida"@es .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#MaintenanceAction
+
+:MaintenanceAction rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :FaultManagementAction ;
+                   
+                   rdfs:comment "e.g. instantaneously or by next possibility to tune process parameters or exchange wom parts;"^^rdfs:Literal .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#MaintenanceFault
+
+:MaintenanceFault rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :FaultByOperation .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Malfunction
+
+:Malfunction rdf:type owl:Class ;
+             
+             rdfs:subClassOf :FaultEvent ;
+             
+             rdfs:comment """“A malfunction is an intermittent irregularity in the fulﬁllment of a system’s desired function.”
+
+Remarks:
+•	a malfunction is a temporary interruption of a system’s FUNCTION;
+•	a malfunction is an EVENT;
+•	a malfunction results from one or more FAULTS;
+•	usually a malfunction arises after begin of the operation or by increasingly stressing the system.
+""" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#ManualProtection
+
+:ManualProtection rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Protection .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#ManufacturingFault
+
+:ManufacturingFault rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :FaultByOperation .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#MaxProductionState
+
+:MaxProductionState rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :StadyState .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Monitoring
+
+:Monitoring rdf:type owl:Class ;
+            
+            rdfs:subClassOf :SupervisionTask ;
+            
+            rdfs:comment "Measurable variables are checked with regard to tolerances, and alarms are generated for the operator. After an alarm is triggered the operator then has to take appropriate counteractions" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#MultipleFailure
+
+:MultipleFailure rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Failure ;
+                 
+                 owl:disjointWith :SingleFailure .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#MultiplicativeFault
+
+:MultiplicativeFault rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :FaultByEfect .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#NormalCondition
+
+:NormalCondition rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :PlantIntemCondition .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#NormalOperationFault
+
+:NormalOperationFault rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :FaultByOperation .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#ObservedFeature
+
+:ObservedFeature rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Feature ;
+                 
+                 :synonymous "HeuristicFeature" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#OffLine
+
+:OffLine rdf:type owl:Class ;
+         
+         rdfs:subClassOf :PlanItemState .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#OperatorFault
+
+:OperatorFault rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Fault ;
+               
+               :synonymous "OperatorError"@es .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#OptimalProductionState
+
+:OptimalProductionState rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :StadyState .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Perturbation
+
+:Perturbation rdf:type owl:Class ;
+              
+              rdfs:subClassOf [ rdf:type owl:Class ;
+                                owl:intersectionOf ( owl:Thing
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :causesDepatureFrom ;
+                                                       owl:someValuesFrom :StadyState
+                                                     ]
+                                                   )
+                              ] ;
+              
+              rdfs:comment "[David] Suele estar asociado a algunas incertidumbres del modelo (eg. error en algun parametro, no modelado de alguna dínamica, etc)." ,
+                           "An input acting on a system which results in a temporary departure from STEADY STATE" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#PlanItemState
+
+:PlanItemState rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Status .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#PlantFault
+
+:PlantFault rdf:type owl:Class ;
+            
+            rdfs:subClassOf :FaultByComponent ;
+            
+            rdfs:comment "Such faults change the dynamical I/O properties of the system." .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#PlantIntemCondition
+
+:PlantIntemCondition rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :Status .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#PlantItem
+
+:PlantItem rdf:type owl:Class ;
+           
+           rdfs:subClassOf :System .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#PlantItemQuality
+
+:PlantItemQuality rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Protection
+
+:Protection rdf:type owl:Class ;
+            
+            rdfs:subClassOf [ rdf:type owl:Class ;
+                              owl:intersectionOf ( :SupervisionTask
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :applyIn ;
+                                                     owl:someValuesFrom :FaultyCondition
+                                                   ]
+                                                 )
+                            ] ;
+            
+            rdfs:comment "Means by which a potentially DANGEROUS BEHAVIOR of the system is suppressed if possible, or means by which the consequences of a dangerous behavior are avoided." .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#RandomFailure
+
+:RandomFailure rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Failure ;
+               
+               owl:disjointWith :SystematicFailure ;
+               
+               rdfs:comment "unpredictable, as, e.g. statistically independent from operation time or other failures" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#RandomFault
+
+:RandomFault rdf:type owl:Class ;
+             
+             rdfs:subClassOf :FaultByForm .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#ReconﬁgurationAction
+
+:ReconﬁgurationAction rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :FaultManagementAction ;
+                      
+                      rdfs:comment "e.g. by using other sensors, actuators or redundant (standby) components to keep the process in operation and under control with a “reconﬁgured” structure;"^^rdfs:Literal .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Reliability
+
+:Reliability rdf:type owl:Class ;
+             
+             rdfs:subClassOf :SystemProperty ;
+             
+             rdfs:comment """“Ability of a system to perform a required FUNCTION under stated conditions, within a given scope, during a given period of time.”
+
+Remarks:
+•	ability to perform a required function for a certain period of time;
+•	the reliability can be affected by MALFUNCTIONS and FAILURES;
+•	a measure for reliability is the MEAN TIME TO FAILURE MTTF = 1 /X, where it is the rate of failures per time unit
+""" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#ReliableOperation
+
+:ReliableOperation rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :FaultManagementAction ;
+                   
+                   rdfs:comment "e.g. by hindering a further fault expansion through changes of operation state, e.g. operation with lower load, speed, pressure, temperature;"^^rdfs:Literal .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#RepairAction
+
+:RepairAction rdf:type owl:Class ;
+              
+              rdfs:subClassOf :FaultManagementAction ;
+              
+              rdfs:comment "e.g. instantaneously to remove a fault or at next possibility (overhaul or revision)."^^rdfs:Literal .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#SafeOperation
+
+:SafeOperation rdf:type owl:Class ;
+               
+               rdfs:subClassOf :FaultManagementAction ;
+               
+               rdfs:comment """e.g. shut down if there is an imminent danger for the process or the environment;
+"""^^rdfs:Literal .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Safety
+
+:Safety rdf:type owl:Class ;
+        
+        rdfs:subClassOf :SystemProperty ;
+        
+        rdfs:comment """“Ability of a system not to cause danger to persons or equipment or the environment.”
+Remarks:
+•	ability not to cause DANGER;
+•	the safety is concerned with the dangerous effects of faults, FAILURES and MALFUNCTIONS;
+•	the safety can usually be seen as a STATUS, where the risk is not larger than a speciﬁed risk limit (risk threshold).
+"""^^rdfs:Literal .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#SensorFault
+
+:SensorFault rdf:type owl:Class ;
+             
+             rdfs:subClassOf :FaultByComponent ;
+             
+             rdfs:comment "The plant properties are not affected, but the sensor readings have substantial errors." .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Severity
+
+:Severity rdf:type owl:Class ;
+          
+          rdfs:subClassOf :SystemProperty ;
+          
+          rdfs:comment """Severity is a measure of the impacts in the system reliability and safety that may be carried on by a given harm.
+[Author: Me]""" ,
+                       """The severity of the failure is generally classified as being in the range of; complete loss of capability with loss of life, to negligible effect on success with no injuries.
+
+[2000 John Gould -  REVIEW OF HAZARD IDENTIFICATION TECHNIQUES - HEALTH AND SAFETY LABORATORY]"""@en .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#SingleFailure
+
+:SingleFailure rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Failure .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#SoftwareFault
+
+:SoftwareFault rdf:type owl:Class ;
+               
+               rdfs:subClassOf :FaultByComponent .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#StadyState
+
+:StadyState rdf:type owl:Class ;
+            
+            rdfs:subClassOf :PlanItemState .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Status
+
+:Status rdf:type owl:Class ;
+        
+        rdfs:comment """A <status> is a <class_of_individual> that is a characteristic or quality that is described by discrete, unordered values.
+EXAMPLE	The classes known as 'open', 'painted', 'approved', 'old', 'new', 'worn', 'hazardous', 'safe', 'dangerous', 'happy', 'sad', and 'rusty' can all be represented as instances of <status>.
+NOTE: Degrees of openness or paintedness are represented as instances of <property> and not instances of <status>.""" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Supervision
+
+:Supervision rdf:type owl:Class ;
+             
+             rdfs:subClassOf :SupervisionTask ;
+             
+             rdfs:comment "MONITORING a physical system and taking appropriate ACTIONS to maintain the operation in the case of faults;" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#SupervisionTask
+
+:SupervisionTask rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf owl:Thing .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Symptom
+
+:Symptom rdf:type owl:Class ;
+         
+         rdfs:subClassOf [ rdf:type owl:Class ;
+                           owl:intersectionOf ( owl:Thing
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasAssociatedFeature ;
+                                                  owl:someValuesFrom :Feature
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :isSymptomOf ;
+                                                  owl:someValuesFrom :Fault
+                                                ]
+                                              )
+                         ] ;
+         
+         :synonymous "Deviation" ;
+         
+         rdfs:comment """A symptom is an unusual change of the features from its normal or nominal values.
+or change of an observable quantity from NORMAL BEHAVIOR """ .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#System
+
+:System rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#SystemProperty
+
+:SystemProperty rdf:type owl:Class ;
+                
+                rdfs:subClassOf owl:Thing .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#SystematicFailure
+
+:SystematicFailure rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :Failure ;
+                   
+                   :synonymous "CausalFailure"^^rdfs:Literal ;
+                   
+                   rdfs:comment "dependent on known conditions" .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#SystematicFault
+
+:SystematicFault rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :FaultByForm .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Transition
+
+:Transition rdf:type owl:Class ;
+            
+            rdfs:subClassOf :PlanItemState .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#Wear
+
+:Wear rdf:type owl:Class ;
+      
+      rdfs:subClassOf :IncipientFault ;
+      
+      rdfs:comment "Desgaste"@es .
+
+
+
+###  http://www.semanticweb.org/ontologies/2014/1/cps_supervision#WrongOperationFault
+
+:WrongOperationFault rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :Fault .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#Acknowledged
+
+pca:Acknowledged rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#Active
+
+pca:Active rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ontologies/2010/5/OntologyPCA.owl#Inactive
+
+pca:Inactive rdf:type owl:NamedIndividual .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AssemblingFault
+                :DesignFault
+                :HardwareFault
+                :MaintenanceFault
+                :ManufacturingFault
+                :NormalOperationFault
+                :OperatorFault
+                :SoftwareFault
+                :WrongOperationFault
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ActuatorFault
+                :PlantFault
+                :SensorFault
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Decision
+                :FaultDetection
+                :FaultDiagnosis
+                :FaultEvaluation
+                :FeatureGeneration
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :DisturbanceCondition
+                :FaultyCondition
+                :NormalCondition
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Block
+                :Drift
+                :Wear
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :InspectionAction
+                :MaintenanceAction
+                :ReconﬁgurationAction
+                :ReliableOperation
+                :RepairAction
+                :SafeOperation
+              )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
